@@ -34,6 +34,7 @@
 		<!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 -->
 		<property name="filterChainDefinitions">
 			<value>
+				<!-- 匿名访问说的是不是会员也可以访问-->
 				<!-- 对静态资源设置匿名访问 -->
 				/images/** = anon
 				/js/** = anon
