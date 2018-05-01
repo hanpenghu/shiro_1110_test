@@ -153,6 +153,10 @@ public class CustomRealm extends AuthorizingRealm {
 		activeUser.setMenus(menus);
 
 		//将activeUser设置simpleAuthenticationInfo
+		//2018_4_30   weekday(1)   23:37:59 add Wiston
+		// 放入的activeUser只是为了在下面一个方法授权的时候取用
+		//并没有用于验证,因为验证用的密码和用户名已经在token中就等于已经在shiro中,
+		//下面的password也是我们在数据库查询的加密后的password,指定后一个参数salt,就行了,salt的加密次数和方法在xml中配置
 		SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
 				activeUser, password,ByteSource.Util.bytes(salt), this.getName());
 
